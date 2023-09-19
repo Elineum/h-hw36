@@ -15,7 +15,7 @@ module.exports = {
       template: "./src/index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "[name]-[fullhash].css",
     }),
   ],
   devServer: {
@@ -57,8 +57,5 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
-  },
-  optimization: {
-    minimizer: [new CssMinimizerPlugin()],
   },
 };
